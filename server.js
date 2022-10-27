@@ -38,3 +38,18 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });
+
+//app.get('/getRequest', (req, res) => {
+    //const p
+//})
+
+app.post('/results', (req, res) => {
+    const checked = req.body.checked
+
+    if (checked == "true") {
+        console.log("true");
+  } else {
+        console.log("false");
+    }
+});
+
