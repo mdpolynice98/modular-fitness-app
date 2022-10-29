@@ -4,6 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const axios = require('axios');
 
 const sequelize = require('./config/connection');
 const {workouts} = require('./models/Workout')
@@ -40,10 +41,6 @@ sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });
 
-//app.get('/getRequest', (req, res) => {
-    //const p
-//})
-
 app.post('/results', (req, res) => {
     const checked = req.body.checked
 
@@ -54,3 +51,10 @@ app.post('/results', (req, res) => {
     }
 });
 
+//app.post("/sign", (req, res) => {    
+//    const { name, email, password, password_confirm } = req.body
+//});
+
+//app.get("/login", (req, res) => {
+//    res.render("login")
+//});
