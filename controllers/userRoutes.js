@@ -8,9 +8,14 @@ router.get('/signup',(req,res) => {
     res.render('signup');
 });
 
-//router.post('/signup',(req,res) =>{
+router.post('/signup',(req,res) =>{
+
     
-registration.insertOne(req.body.name_signup,req.body.email_signup,req.body.password_signup,function(data){
+registration.create({ 
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password
+}); 
     res.redirect('/login');
 });
      

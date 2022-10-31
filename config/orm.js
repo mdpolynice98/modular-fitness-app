@@ -3,10 +3,10 @@ const bcrypt = require('bcrypt-nodejs');
 
 const orm = {
 
- signup
     insertOneRegistration: function(name,email,password,cb){
         let sql="insert into users(name,email,password) values('"+name+"','"+email+"','"+bcrypt.hashSync(password)+"');";
-
+    },
+    
     insertOneUser: function(username,password,cb){
         let sql="insert into users(username,password) values('"+username+"','"+bcrypt.hashSync(password)+"');";
 
@@ -20,6 +20,7 @@ const orm = {
 
     selectOneRegistration:function(email,cb){
         let sql="select email from users where email = '"+email+"';";
+    },
 
     selectOneUser:function(username,cb){
         let sql="select username from users where username = '"+username+"';";
