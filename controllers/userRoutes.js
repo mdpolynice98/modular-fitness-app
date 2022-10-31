@@ -9,21 +9,18 @@ router.get('/signup',(req,res) => {
 });
 
 router.post('/signup',(req,res) =>{
+
     
-
-
-    registration.insertOne(req.body.name_signup,req.body.email_signup,req.body.password_signup,function(data){
-        res.redirect('/login');
-    });
+registration.create({ 
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password
+}); 
     res.redirect('/login');
-
+});
+     
+router.get('/login', (req, res) => {  
+    res.render('login');
 });
   
-  router.get('/login', (req, res) => {
-
-    
-  
-    res.render('login');
-  });
-  
-  module.exports = router;
+module.exports = router;
