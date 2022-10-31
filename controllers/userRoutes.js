@@ -8,7 +8,7 @@ router.post('/signup',(req,res) =>{
     
 });
   
-  router.get('/login', (req, res) => {
+router.get('/login', (req, res) => {
 
     
   
