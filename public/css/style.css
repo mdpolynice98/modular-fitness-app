@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(https://huntsvilleherald.com/wp-content/uploads/2022/02/header_pre_workout_booster.png);
+    background-size: cover;
+}
+
+.trixi {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+button {
+    border: none;
+    background: red;
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    transition: .4s;
+}
+span {
+    color: red;
+}
+.logo h1{
+    font-size: 160px;
+    color: white;
+    font-weight: 600;
+    
+}
+    
