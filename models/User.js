@@ -7,3 +7,25 @@ class User extends Model {
       return bcrypt.compareSync(loginPw, this.password);
     }
 }
+
+User.init({
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      len: [10],
+    },
+  },
+},
+{
+  sequelize,
+  timestamps: false,
+  freezeTableName: true,
+}
+);
+
+module.exports = User;

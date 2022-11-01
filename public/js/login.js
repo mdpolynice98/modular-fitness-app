@@ -6,20 +6,20 @@ const loginFormHandler = async (event) => {
   
     if (email && password) {
       const response = await fetch('/api/users/login', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-        headers: { 'Content-Type': 'application/json' },
+         method: 'POST',
+         body: JSON.stringify({ email, password }),
+         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/');
+         document.location.replace('/');
       } else {
-        alert('Invalid');
+        alert('Invalid info. Try again.');
       }
     }
-  };
+};
   
-  document
+document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
   
